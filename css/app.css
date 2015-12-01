@@ -1,0 +1,101 @@
+/* app css stylesheet */
+
+body {
+  background: rgba(245,245,245,0.88);
+  padding-bottom: 50px;
+}
+
+/* -- Fighter List Page -- */
+.fighters { list-style: none; }
+.fighters h4 {
+  margin: 0;
+}
+
+.thumb {
+  float: left;
+  padding-right: 10px;
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.fighters li {
+  clear: both;
+  padding: 10px;
+}
+/* -- Fighter Details Page -- */
+.fighter-detail h1 {
+  color: #fff;
+  border-bottom: 1px solid gray;
+  font-size: 48px;
+  padding-bottom: 25px;
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+
+/** Detail View **/
+.fighter-stats { }
+
+ul.special-moves { list-style: none; }
+
+/* MOVIE POSTERS */
+
+.fighter-thumbs { 
+  margin: 40px 0 0 0;
+  list-style: none;
+  }
+.fighter-thumbs li {
+  display: inline;
+  float: left;
+   margin-right: 10px;
+  -webkit-perspective: 500;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition-property: perspective;
+  -webkit-transition-duration: 0.5s;
+}
+ul.fighter-thumbs li:last-of-type { margin-right: 0; }
+.fighter-thumbs li:hover { -webkit-perspective: 5000; }
+
+.fighter-thumbs li img {
+  background-color: #fff;
+  height: 206px;
+  width: 206px;
+  padding: 10px;
+  -webkit-transform: rotateY(30deg);
+  -moz-box-shadow: 0 3px 10px #888;
+  -webkit-box-shadow: 0 3px 10px #888;
+  -webkit-transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+}
+.fighter-thumbs li:hover img { -webkit-transform: rotateY(0deg); }
+
+ul.specs {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.specs > li{
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+}
+
+ul.specs > li > span{
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+ul.specs dt {
+  font-weight: bold;
+}

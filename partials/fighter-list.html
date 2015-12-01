@@ -1,0 +1,42 @@
+<header ng-include src="headerHtml" id="top" class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner"></header>
+
+<div class="container">
+  <div class="row-fluid">       
+    <div class="span4">
+      Search:<br>
+      <input ng-model="query">
+      <br>
+      Sort by:<br>
+      <select ng-model="orderProp">
+        <option value="firstName">First Name</option>
+        <option value="nationality">Nationality</option>
+        <option value="age">Young to Old</option>
+        <option value="-age">Old to Young</option>
+      </select>
+      <br>
+      Limit number of fighters to: <br>
+      <input type="integer" ng-model="numLimit">
+      <p>Total number of fighters: {{fighters.length}}</p>
+    </div><!-- Span 4 -->
+    
+    <div class="span8">
+  
+      <ul class="fighters">
+        <li ng-repeat="fighter in fighters | filter:query | orderBy:orderProp | limitTo:numLimit" class="thumbnail"> 
+          <a href="#/fighters/{{fighter.id}}" class="thumb">
+            <img ng-src="{{fighter.imageUrl}}">
+          </a>
+          <a href="#/fighters/{{fighter.id}}"><h4>{{fighter.firstName | capitalize}}</h4></a>
+          <p>
+            &quot;{{fighter.quote}}&quot;<br>
+            <b>Nationality:</b> {{fighter.nationality}}<br>
+            <b>Age:</b> {{fighter.age | number}}<br>
+            <b>DOB:</b> {{fighter.dob}}
+          </p>
+        </li>
+      </ul>
+     
+    </div><!--SPAN 8-->
+    
+  </div><!-- Row -->
+</div><!-- Conatiner -->

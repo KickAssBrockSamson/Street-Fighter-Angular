@@ -1,0 +1,58 @@
+<header ng-include src="headerHtml" id="top" class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner"></header>
+
+<div class="container fighter-detail">
+  
+  <div class="row-fluid">
+    
+    <div class="span4">
+     <img ng-src="{{mainImageUrl}}">
+    </div>
+    
+    <div class="span8">
+      
+      <h1>{{fighter.firstName | capitalize}}</h1>
+      <p></p>
+      <blockquote class="blockquote-reverse">
+        <p>{{fighter.quote}}</p>
+        <footer>{{fighter.firstName | capitalize}}</footer>
+      </blockquote>
+      <h3>Stats:</h3>
+      <dl class="fighter-stats dl-horizontal">
+        <dt>Alignment:</dt>
+        <dd>{{fighter.alignment | capitalize}}</dd>
+        <dt>Date Of Birth:</dt>
+        <dd>{{fighter.dob}}</dd>
+        <dt>Age:</dt>
+        <dd>{{fighter.age}}</dd>
+        <dt>Height:</dt>
+        <dd>{{fighter.height}}</dd>
+        <dt>Weight:</dt>
+        <dd>{{fighter.weight}}</dd> 
+        <dt>Blood Type:</dt>
+        <dd>{{fighter.bloodType | capitalize}}</dd>
+        <dt>Nationality:</dt>
+        <dd>{{fighter.nationality | capitalize}}</dd>
+        <dt>Fighting Style:</dt>
+        <dd>{{fighter.fightingStyle | capitalize}}</dd>
+      </dl>
+      <h3>Special Moves:</h3>
+      <ul class="special-moves">
+        <li ng-repeat="specialMove in fighter.specialMoves">
+          {{specialMove | capitalize}}
+        </li>
+      </ul>
+      <h3>Fighter Bio:</h3>    
+      <p>{{fighter.bio}}</p>
+          
+    </div>
+    
+  </div>
+  
+<ul id="movieposters" class="fighter-thumbs">
+  <li ng-repeat="img in fighter.images">
+    <img ng-src="{{img}}" ng-click="setImage(img)">
+  </li>
+</ul>
+  
+</div>
+
